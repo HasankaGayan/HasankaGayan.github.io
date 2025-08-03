@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasanka Gayan Somaweera | Projects</title>
+  <!-- Boxicons -->
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="Project.css" />
+
+</head>
+<body>
+  <!-- Mobile Menu Toggle -->
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-header">
+        <div class="nav-logo">Hasanka Gayan</div>
+        <div class="nav-subtitle">Undergraduate</div>
+    </div>
+    <ul>
+      <li><a href="Index.html"><i class="fas fa-home"></i> Home</a></li>
+      <li><a href="About_Me.html"><i class="fas fa-user"></i> About</a></li>
+      <li><a href="Experience.html"><i class="fas fa-layer-group"></i> Experiences</a></li>
+      <li><a href="Education.html"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
+      <li><a href="Project.html" class="active"><i class="fas fa-project-diagram"></i> Projects</a></li>
+      <li><a href="Certificates.html"><i class="fa-solid fa-award"></i> Certificates & Achievements</a></li>
+      <li><a href="Contact_Me.html"><i class="fas fa-envelope"></i> Contact Me</a></li>
+    </ul>
+    <div class="nav-footer">
+        <div class="nav-logo-footer">Designed by,</div>
+    <div class="nav-subtitle-footer">Hasanka Gayan | 2025</div>
+  </nav>
+
+  <main>
+    <section class="project" id="project">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="heading">Featured <span>Projects</span></h2>
+          <div class="heading-line"></div>
+        </div>
+
+        <div class="projects-grid">
+
+          <!-- Project 9: FYP -->
+          <div class="project-card" data-repo="FYP">
+            <div class="project-image">
+              <img src="Images/Projects/FYP.png" alt="FYP" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('FYP')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                  <a href="https://www.figma.com/design/U9X39TSNdPatRaMipLLbGW/Public-Transportation-App?node-id=0-1&p=f&t=2TSxMN0w8HLeIUoz-0" class="project-link github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Full-Stack • Python (Desktop) & Java (Android App)</div>
+              <h3>Thermal Plus - Thermal Image Real Time Monitoring collaborate with LECO (Pvt) Ltd</h3>
+              <p>This Final Year Project focuses on improving the accuracy of thermal imaging for power transformers and real-time temperature monitoring. The system adjusts the emissivity values of different transformer components, allowing for precise thermal analysis.</p>
+
+              <div class="project-tech">
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">Android App Development</span>
+                <span class="tech-tag">Thermal Imaging</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- FYP Modal -->
+          <div id="FYP" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('FYP')">&times;</span>
+              <h3>Thermal Plus - Thermal Image Real Time Monitoring collaborate with LECO (Pvt) Ltd</h3>
+              <p>This Final Year Project focuses on improving the accuracy of thermal imaging for power transformers and real-time temperature monitoring. The system adjusts the emissivity values of different transformer components, allowing for precise thermal analysis. By incorporating factors such as relative humidity, ambient temperature, image capturing distance, and elevation, the project enabled more accurate and reliable real-time detection of abnormal heating, supporting early fault identification and efficient maintenance planning.</p>
+              
+              <h4>🎯 Key Features:</h4>
+              <ul>
+                <li>Temperature accuracy increasing.</li>
+                <li>Real-Time monitoring of the temperature values.</li>
+                <li>Fully automated the Thermal Imaging system.</li>
+                <li>Automated email system for abnormalities.</li>
+                <li>ML model for component identification.</li>
+                <li>AWS integration.</li>
+              </ul>
+
+              <div class="modal-tech-stack">
+                <span class="modal-tech-tag">Python</span>
+                <span class="modal-tech-tag">Android App Development</span>
+                <span class="modal-tech-tag">Thermal Imaging</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8: EasyMeds -->
+          <div class="project-card" data-repo="EasyMeds">
+            <div class="project-image">
+              <img src="Images/Projects/EasyMeds.png" alt="EasyMeds" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('EasyMeds')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                  <a href="https://www.figma.com/design/U9X39TSNdPatRaMipLLbGW/Public-Transportation-App?node-id=0-1&p=f&t=2TSxMN0w8HLeIUoz-0" class="project-link github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fab fa-github"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Full-Stack • Java (Android App)</div>
+              <h3>EasyMeds - Pharmacy App</h3>
+              <p>This is a user-friendly mobile application designed to simplify the process of ordering and managing medications. It allows users to browse medicines, upload prescriptions, place orders, and receive delivery updates.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Java Android App Development</span>
+                <span class="tech-tag">Android Studio</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- EasyMeds Modal -->
+          <div id="EasyMeds" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('EasyMeds')">&times;</span>
+              <h3>EasyMeds - Pharmacy App</h3>
+              <p>This is a user-friendly mobile application designed to simplify the process of ordering and managing medications. It allows users to browse medicines, upload prescriptions, place orders, and receive delivery updates. Making pharmacy access more convenient and efficient for both customers and pharmacists in this application.</p>
+              
+              <h4>🎯 Key Features:</h4>
+              <ul>
+                <li>Medicine Sarching.</li>
+                <li>Showing available pharmacies.</li>
+                <li>Pharmacy details displaying (Mobile Number, Location).</li>
+                <li>Navigate to Google Map to find the location of the pharmacy.</li>
+                <li>Scan pescriptions and medicine searching.</li>
+                <li>Favourite pharmacies storing.</li>
+              </ul>
+
+              <div class="modal-tech-stack">
+                <span class="modal-tech-tag">Java Android App Development</span>
+                <span class="modal-tech-tag">Android Studio</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7: Public Transportation Payment System -->
+          <div class="project-card" data-repo="Research and Design Project">
+            <div class="project-image">
+              <img src="Images/Projects/Research and Design.png" alt="Research and Design Project" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('Research and Design Project')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                  <a href="https://www.figma.com/design/U9X39TSNdPatRaMipLLbGW/Public-Transportation-App?node-id=0-1&p=f&t=2TSxMN0w8HLeIUoz-0" class="project-link github-link" target="_blank" rel="noopener noreferrer">
+                    <i class="fa-brands fa-figma"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Research & Design • Figma</div>
+              <h3>Public Transportation Payment System for Colombo City</h3>
+              <p>Mobile application to improve the public transportation payment system in Colombo. The key innovation of this project is enabling passengers to extend their tickets after purchase with correct payments and ensuring accurate balance repayment at early get off bus stops.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Figma Design</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Research and Design Project Modal -->
+          <div id="Research and Design Project" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('Research and Design Project')">&times;</span>
+              <h3>Public Transportation Payment System for Colombo City</h3>
+              
+              <h4>🎯 Key Features:</h4>
+              <ul>
+                <li>Ticket Purchasing.</li>
+                <li>Monthly Ticket History.</li>
+                <li>Seat Reservation.</li>
+                <li>Lost & Found Notices.</li>
+                <li>News Updates.</li>
+                <li>Complaint Submission.</li>
+                <li>Emergency Contact Access.</li>
+              </ul>
+
+              <div class="modal-tech-stack">
+                <span class="modal-tech-tag">Figma Design</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6: Induction Motor Control App -->
+          <div class="project-card" data-repo="Induction Motor Control App">
+            <div class="project-image">
+              <img src="Images/Projects/Induction Motor Control App.png" alt="Induction Motor Control App" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('Induction Motor Control App')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Front-End • React Native</div>
+              <h3>Induction Motor Control App</h3>
+              <p>Mobile application designed to remotely monitor and control the operation of an induction motor. It allows users to start, stop, and adjust motor parameters such as speed and direction through a user-friendly interface.</p>
+              <div class="project-tech">
+                <span class="tech-tag">React Native</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Induction Motor Control App Modals -->
+          <div id="Induction Motor Control App" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('Induction Motor Control App')">&times;</span>
+              <h3>Induction Motor Control App - Research Project collaborate with LECO (Pvt) Ltd</h3>
+              <p>Mobile application designed to remotely monitor and control the operation of an induction motor. It allows users to start, stop, and adjust motor parameters such as speed and direction through a user-friendly interface. The app integrates with motor control hardware via Bluetooth, providing real-time status updates and improving efficiency, safety, and convenience in lab environments.</p>
+              
+              <h4>🎯 Key Features:</h4>
+              <ul>
+                <li>Real-Time monitoring of the Induction Motor.</li>
+                <li>Mobile based controlling.</li>
+                <li>Error & Warning messages.</li>
+              </ul>
+
+              <div class="modal-tech-stack">
+                <span class="tech-tag">React Native</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5: Impact of Solar Power on Transformer Performance -->
+          <div class="project-card" data-repo="Impact of Solar Power on Transformer Performance">
+            <div class="project-image">
+              <img src="Images/Projects/Transformer Performance.jpeg" alt="Transformer Performance" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('Impact of Solar Power on Transformer Performance')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Research • LECO (Pvt) Ltd</div>
+              <h3>Impact of Solar Power on Transformer Performance</h3>
+              <p>Focused on evaluating how solar power integration affects transformer behavior in the distribution network. This study involved monitoring load variations, voltage fluctuations, and thermal performance of transformers connected to solar-fed lines.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Microsoft Excel</span>
+                <span class="tech-tag">Solar System Design</span>
+                <span class="tech-tag">Transformer Analysis</span>
+              </div>
+            </div>
+          </div>
+
+                    <!-- Impact of Solar Power on Transformer Performance Modals -->
+          <div id="Impact of Solar Power on Transformer Performance" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('Impact of Solar Power on Transformer Performance')">&times;</span>
+              <h3>Impact of Solar Power on Transformer Performance - Research Project collaborate with LECO (Pvt) Ltd</h3>
+              <p>Focused on evaluating how solar power integration affects transformer behavior in the distribution network. This study involved monitoring load variations, voltage fluctuations, and thermal performance of transformers connected to solar-fed lines. The goal was to assess the reliability, efficiency, and potential stress or imbalance introduced by solar power systems in the existing grid infrastructure.</p>
+              
+              <h4>🎯 Research Area:</h4>
+              <ul>
+                <li>Factors that can affect the Transformer performance.</li>
+                <li>Solar inverter affection.</li>
+                <li>Transformer manufacturing processes.</li>
+              </ul>
+
+              <div class="modal-tech-stack">
+                <span class="tech-tag">Microsoft Excel</span>
+                <span class="tech-tag">Solar System Design</span>
+                <span class="tech-tag">Transformer Analysis</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4: Smart Home System -->
+          <div class="project-card" data-repo="Smart Home System">
+            <div class="project-image">
+              <img src="Images/Projects/Smart Home FPGA.png" alt="Smart Home System" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('Smart Home System')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Prototype • Verilog (FPGA)</div>
+              <h3>Smart Home System</h3>
+              <p>Sensor-based home automation system developed using Verilog and implemented on an FPGA board. The project aimed to improve energy efficiency and convenience by automating household functions.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Verilog</span>
+                <span class="tech-tag">Sensors</span>
+                <span class="tech-tag">FPGA Boards</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Smart Home System Modals -->
+          <div id="Smart Home System" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('Smart Home System')">&times;</span>
+              <h3>Smart Home System - Using Verilog (FPGA)</h3>
+              <p>Sensor-based home automation system developed using Verilog and implemented on an FPGA board. The project aimed to improve energy efficiency and convenience by automating household functions.</p>
+              
+              <h4>🎯 Key Features:</h4>
+              <ul>
+                <li><strong>LDR-based lighting control :</strong> Automatically switches lights ON/OFF based on ambient light levels.</li>
+                <li><strong>Thermistor-controlled fans :</strong> Activates fans according to room temperature.</li>
+                <li><strong>Automated window operation :</strong> Opens or closes windows based on light intensity.</li>
+                <li><strong>PIR sensor-based motion detection :</strong> Turns on room lights when motion is detected.</li>
+                <li><strong>FPGA implementation using Verilog :</strong> Enables fast, reliable hardware-level automation.</li>
+                <li><strong>Energy-efficient design :</strong> Focused on reducing electricity wastage through automation.</li>
+              </ul>
+
+              <div class="modal-tech-stack">
+                <span class="tech-tag">Verilog</span>
+                <span class="tech-tag">Sensors</span>
+                <span class="tech-tag">FPGA Boards</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3: Twin view pupillometry -->
+          <div class="project-card" data-repo="Twin view pupillometry">
+            <div class="project-image">
+              <img src="Images/Projects/Twin View.jpeg" alt="Twin view pupillometry" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('Twin view pupillometry')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Pupil detection in ICU Patients • Image Processing & Hardware</div>
+              <h3>Twin view pupillometry</h3>
+              <p>Monitor and analyze pupil responses using dual-camera setups. It captures high-resolution images of both eyes simultaneously to study pupil dynamics, supporting applications in neurological assessment, cognitive research, and fatigue detection.</p>
+              <div class="project-tech">
+                <span class="tech-tag">ESP32</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">HTML</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Twin view pupillometry Modals -->
+          <div id="Twin view pupillometry" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('Twin view pupillometry')">&times;</span>
+              <h3>Twin view pupillometry - Precise and real-time observation of ICU patients’ eye pupils</h3>
+              <p>Monitor and analyze pupil responses using dual-camera setups. It captures high-resolution images of both eyes simultaneously to study pupil dynamics, supporting applications in neurological assessment, cognitive research, and fatigue detection.</p>
+              
+              <h4>🎯 Key Features:</h4>
+              <ul>
+                <li><strong>Dual-camera setup</strong> for simultaneous monitoring of both eyes</li>
+                <li><strong>Real-time pupil tracking</strong> and measurement</li>
+                <li><strong>Non-invasive and contactless</strong> data acquisition</li>
+                <li><strong>High-resolution imaging</strong> for accurate analysis</li>
+                <li><strong>Applications in neuroscience</strong>, fatigue detection, and cognitive studies</li>
+                <li><strong>Automated data processing</strong> for efficiency and consistency</li>
+              </ul>
+
+              <div class="modal-tech-stack">
+                <span class="tech-tag">ESP32</span>
+                <span class="tech-tag">Python</span>
+                <span class="tech-tag">HTML</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2: Carrom Game -->
+          <div class="project-card" data-repo="Carrom Game">
+            <div class="project-image">
+              <img src="Images/Projects/Carrom Game.png" alt="Carrom Game" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('Carrom Game')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Console-Based Game • C++</div>
+              <h3>Carrom Game</h3>
+              <p>A simple C++ project developed during my first year to simulate a basic carrom board game in the console. It helped me understand fundamental programming concepts such as loops, conditionals, and functions while implementing basic game logic and user interaction without using advanced graphics libraries.</p>
+              <div class="project-tech">
+                <span class="tech-tag">C++</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Carrom Game Model -->
+          <div id="Carrom Game" class="modal">
+            <div class="modal-content">
+              <span class="close" onclick="closeModal('Carrom Game')">&times;</span>
+              <h3>Carrom Game - Console Based Game</h3>
+              <p>A fully functional console-based carrom game that demonstrates fundamental C++ programming concepts and object-oriented design principles.</p>
+              
+              <h4>🎯 Key Features:</h4>
+              <ul>
+                <li>Complete Carrom game logic implementation</li>
+                <li>Accurate scoring system.</li>
+                <li>Frame-by-frame score tracking.</li>
+                <li>Input validation and error handling.</li>
+                <li>Clean console-based user interface.</li>
+              </ul>
+
+              <div class="modal-tech-stack">
+                <span class="modal-tech-tag">C++</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 1: Automated Classroom System -->
+          <div class="project-card" data-repo="Automated Classroom System">
+            <div class="project-image">
+              <img src="Images/Projects/Class Room.png" alt="Automated Classroom System" />
+              <div class="project-overlay">
+                <div class="project-links">
+                  <button class="project-link" onclick="openProjectDetails('Automated Classroom System')">
+                    <i class="fas fa-info-circle"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="project-info">
+              <div class="project-category">Using Electronic Sensors • Arduino</div>
+              <h3>Automated Classroom System</h3>
+              <p>An energy-saving automation project using Arduino, designed to automatically control lights and fans in school classrooms. It uses LDR sensors for day/night detection, thermistors for temperature-based fan control, reed switches to detect door status, and relays for AC voltage control.</p>
+              <div class="project-tech">
+                <span class="tech-tag">Arduino Programming</span>
+                <span class="tech-tag">Electronic Sensors</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Automated Classromm System Model -->
+        <div id="Automated Classroom System" class="modal">
+          <div class="modal-content">
+            <span class="close" onclick="closeModal('Automated Classroom System')">&times;</span>
+            <h3>Automated Classroom System - Electronic Sensors</h3>
+            <p>In my first-year academics, I developed a smart classroom system aimed at promoting energy conservation through automation. The primary motivation behind this project was to address the common issue of lights and fans being left on in school classrooms after school, leading to unnecessary electricity wastage. To tackle this, I designed a system that could intelligently control electrical appliances based on environmental conditions and room occupancy.</p>
+            <p>The system was built using an Arduino microcontroller and integrated with various sensors. An LDR (Light Dependent Resistor) was used to detect ambient light levels, enabling the system to automatically turn off lights during the day and switch them on when it gets dark. A thermistor was employed to monitor temperature changes, activating the fans only when the classroom became warm. To determine whether the classroom was in use, I used a reed switch placed on the door; when the door was closed and no activity was detected, the system assumed the room was unoccupied and turned off all appliances. The control of AC-powered devices like lights and fans was managed using relay modules, which acted as switches between the microcontroller and the high-voltage components.</p>
+            
+            <h4>🎯 Key Features:</h4>
+            <ul>
+              <li><strong>Automated Light ON/OFF System :</strong> Identify the day, night and the dark light condition like rainy day.</li>
+              <li><strong>Automated Fan ON/OFF System :</strong> Identify the hot and cold of the environment.</li>
+              <li><strong>Classroom Door Close Identification :</strong> Controlling of the circuit currents and voltage.</li>
+            </ul>
+
+            <h4>🤖 Used Sensors and Purpose:</h4>
+            <ul>
+              <li><strong>Arduino Board : </strong>Microcontroller and controlling.</li>
+              <li><strong>LDR : </strong>Automated light operating system.</li>
+              <li><strong>Thermistor : </strong>Automated fan operating system.</li>
+              <li><strong>Reed Switch : </strong>Identify the door operating.</li>
+              <li><strong>Bread Board : </strong>Circuit.</li>
+              <li><strong>DC Motor : </strong>Used for fan operation.</li>
+              <li><strong>LED : </strong>Used for bulb operation.</li>
+              <li><strong>Relay Module : </strong>Control 230 V AC voltage.</li>
+            </ul>
+
+            <div class="modal-tech-stack">
+                <span class="tech-tag">Arduino Programming</span>
+                <span class="tech-tag">Electronic Sensors</span>
+              <span class="modal-tech-tag">Arduino Uno Board</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <script src="Project_Script.js"></script>
+</body>
+</html>

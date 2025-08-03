@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hasanka Gayan Somaweera | Experiences</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="Experience_Style.css" />
+
+</head>
+<body>
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Animated background particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Mobile menu toggle -->
+  <button class="menu-toggle" onclick="toggleMenu()">
+    <i class="fas fa-bars"></i>
+  </button>
+
+<!-- Navigation -->
+<nav id="navbar">
+    <div class="nav-header">
+        <div class="nav-logo">Hasanka Gayan</div>
+        <div class="nav-subtitle">Undergraduate</div>
+    </div>
+      <ul>
+        <li><a href="Index.html"><i class="fas fa-home"></i>Home</a></li>
+        <li><a href="About_Me.html"><i class="fas fa-user"></i>About</a></li>
+        <li><a href="Experience.html" class="active"><i class="fas fa-layer-group"></i>Experiences</a></li>
+        <li><a href="Education.html"><i class="fa-solid fa-graduation-cap"></i>Education</a></li>
+        <li><a href="Project.html"><i class="fas fa-project-diagram"></i>Projects</a></li>
+        <li><a href="Certificates.html"><i class="fa-solid fa-award"></i>Certificates & Achievements</a></li>
+        <li><a href="Contact_Me.html"><i class="fas fa-envelope"></i>Contact Me</a></li>
+      </ul>
+          <div class="nav-footer">
+              <div class="nav-logo-footer">Designed by,</div>
+          <div class="nav-subtitle-footer">Hasanka Gayan | 2025</div>
+  </nav>
+
+  <main>
+    <div class="Experience_Head">
+      <h1>Professional Journey</h1>
+    </div>
+
+    <div class="Experience-Timeline">
+      <div class="Timeline-Item">
+        <div class="Timeline-Dot" onclick="highlightCard(this)"></div>
+        <div class="Experience-Card" data-experience="90">
+          <!-- <div class="status-badge">Recent</div> -->
+          <div class="Experience-Header">
+            <div class="CEB-Logo">
+              <img src="Images/Experience/CEB Logo.png" alt="CEB Logo" class="Experience-Logo" />
+            </div>
+            <div class="Experience-Info">
+              <h3>Trainee Electrical Engineer</h3>
+              <h4>Ceylon Electricity Board</h4>
+              <div class="Specialization">Internship</div>
+              <div class="Experience-Meta">
+                <span class="Duration"><i class="fas fa-calendar"></i>Jul 2024 - Oct 2024</span>
+              </div>
+            </div>
+          </div>
+          <div class="skills-gained">
+            <h5>Skills & Technologies:</h5>
+            <div class="skill-tags">
+              <div class="skill-tag">Power Generation</div>
+              <div class="skill-tag">Power Distribution</div>
+              <div class="skill-tag">Safety Protocols</div>
+              <div class="skill-tag">Grid Management</div>
+              <div class="skill-tag">Maintenance</div>
+            </div>
+          </div>
+          <div class="experience-level">
+            <div class="experience-bar" style="--experience: 90%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="Timeline-Item">
+        <div class="Timeline-Dot" onclick="highlightCard(this)"></div>
+        <div class="Experience-Card" data-experience="85">
+          <!-- <div class="status-badge">Foundation</div> -->
+          <div class="Experience-Header">
+            <div class="LECO-Logo">
+              <img src="Images/Experience/LECO Logo.png" alt="LECO Logo" class="Experience-Logo_LECO" />
+            </div>
+            <div class="Experience-Info">
+              <h3>Trainee Electrical Engineer</h3>
+              <h4>Lanka Electricity Company (Pvt) Ltd</h4>
+              <div class="Specialization">Internship</div>
+              <div class="Experience-Meta">
+                <span class="Duration"><i class="fas fa-calendar"></i>Apr 2024 - Jul 2024</span>
+              </div>
+            </div>
+          </div>
+          <div class="skills-gained">
+            <h5>Skills & Technologies:</h5>
+            <div class="skill-tags">
+              <div class="skill-tag">Power Distribution</div>
+              <div class="skill-tag">Solar Power</div>
+              <div class="skill-tag">Transformer Fault Analysis</div>
+              <div class="skill-tag">Technical Documentation</div>
+              <div class="skill-tag">Team Collaboration</div>
+            </div>
+          </div>
+          <div class="experience-level">
+            <div class="experience-bar" style="--experience: 85%"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="Experience_Script.js"></script>
+</body>
+</html>
