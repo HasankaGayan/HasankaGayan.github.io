@@ -258,7 +258,7 @@ main {
 .coming-soon {
     background: var(--card-bg);
     border-radius: 25px;
-    padding: 4rem 3rem;
+    padding: 2rem 1rem;
     border: 1px solid var(--border-color);
     box-shadow: 0 20px 40px rgba(34, 210, 230, 0.1);
     position: relative;
@@ -565,7 +565,6 @@ main {
     .progress-item {
         flex-direction: column;
         text-align: center;
-        gap: 0.8rem;
     }
 
     .social-links {
