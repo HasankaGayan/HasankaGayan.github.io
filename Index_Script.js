@@ -1,37 +1,28 @@
+// Scroll progress indicator
+window.addEventListener('scroll', () => {
+    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.body.offsetHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = scrollPercent + '%';
+});
+
 // Mobile Navigation Toggle
 function toggleNav() {
     const navbar = document.getElementById('navbar');
-    const overlay = document.querySelector('.overlay');
-    const toggleBtn = document.querySelector('.mobile-toggle');
-    
+    const menuToggle = document.querySelector('.menu-toggle');
     navbar.classList.toggle('active');
-    overlay.classList.toggle('active');
     
     // Change icon
-    const icon = toggleBtn.querySelector('i');
+    const icon = menuToggle.querySelector('i');
     if (navbar.classList.contains('active')) {
-        icon.className = 'fas fa-times';
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
     } else {
-        icon.className = 'fas fa-bars';
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
     }
 }
-
-// Mobile Navigation Toggle
-// function toggleNav() {
-//     const navbar = document.getElementById('navbar');
-//     const menuToggle = document.querySelector('.menu-toggle');
-//     navbar.classList.toggle('active');
-    
-//     // Change icon
-//     const icon = menuToggle.querySelector('i');
-//     if (navbar.classList.contains('active')) {
-//         icon.classList.remove('fa-bars');
-//         icon.classList.add('fa-times');
-//     } else {
-//         icon.classList.remove('fa-times');
-//         icon.classList.add('fa-bars');
-//     }
-// }
 
 // Typewriter Effect
 const typewriterText = document.getElementById('typewriter');
