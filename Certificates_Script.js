@@ -1,12 +1,3 @@
-// Scroll progress indicator
-window.addEventListener('scroll', () => {
-    const scrollProgress = document.getElementById('scrollProgress');
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.offsetHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
-});
-
 // Create floating particles
 function createParticles() {
     const particlesContainer = document.getElementById('particles');

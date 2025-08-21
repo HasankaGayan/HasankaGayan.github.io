@@ -1,28 +1,19 @@
-// Scroll progress indicator
-window.addEventListener('scroll', () => {
-    const scrollProgress = document.getElementById('scrollProgress');
-    const scrollTop = window.pageYOffset;
-    const docHeight = document.body.offsetHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
-    scrollProgress.style.width = scrollPercent + '%';
-});
-
 // Mobile menu toggle
-// function toggleMenu() {
-//     const nav = document.getElementById('nav');
-//     const menuToggle = document.querySelector('.menu-toggle');
+function toggleMenu() {
+    const nav = document.getElementById('nav');
+    const menuToggle = document.querySelector('.menu-toggle');
     
-//     nav.classList.toggle('active');
+    nav.classList.toggle('active');
     
-//     const icon = menuToggle.querySelector('i');
-//     if (nav.classList.contains('active')) {
-//         icon.classList.remove('fa-bars');
-//         icon.classList.add('fa-times');
-//     } else {
-//         icon.classList.remove('fa-times');
-//         icon.classList.add('fa-bars');
-//     }
-// }
+    const icon = menuToggle.querySelector('i');
+    if (nav.classList.contains('active')) {
+        icon.classList.remove('fa-bars');
+        icon.classList.add('fa-times');
+    } else {
+        icon.classList.remove('fa-times');
+        icon.classList.add('fa-bars');
+    }
+}
 
 // Open project details modal
 function openProjectDetails(projectId) {
