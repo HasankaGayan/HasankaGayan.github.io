@@ -3,98 +3,41 @@ window.addEventListener('scroll', () => {
     const scrollProgress = document.getElementById('scrollProgress');
     const scrollTop = window.pageYOffset;
     const docHeight = document.body.offsetHeight - window.innerHeight;
-    const scrollPercent = (scrollTop / docHeight) * 100;
+    const scrollPercent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
     scrollProgress.style.width = scrollPercent + '%';
 });
 
-// Counter animation for stats
-function animateCounters() {
-    const counters = document.querySelectorAll('.stat-number');
-    
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        const current = parseInt(counter.textContent);
-        const increment = target / 50;
-        
-        if (current < target) {
-            counter.textContent = Math.ceil(current + increment);
-            setTimeout(() => animateCounters(), 50);
-        }
-    });
-}
-
-// Start counter animation when page loads
-window.addEventListener('load', () => {
-    setTimeout(animateCounters, 1000);
-});
-
-// Add mobile menu toggle functionality
-const menuToggle = document.createElement('button');
-menuToggle.className = 'menu-toggle';
-menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-menuToggle.style.cssText = `
-    display: none;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1001;
-    background: var(--gradient-primary);
-    border: none;
-    border-radius: 10px;
-    padding: 0.8rem;
-    color: var(--bg-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-`;
-
-document.body.appendChild(menuToggle);
-
-// Show menu toggle on mobile
-if (window.innerWidth <= 1024) {
-    menuToggle.style.display = 'block';
-}
-
-menuToggle.addEventListener('click', () => {
-    const nav = document.querySelector('nav');
-    nav.classList.toggle('active');
-    
-    const icon = menuToggle.querySelector('i');
-    if (nav.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-});
-
-// Responsive handling
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 1024) {
-        menuToggle.style.display = 'block';
-    } else {
-        menuToggle.style.display = 'none';
-        document.querySelector('nav').classList.remove('active');
-    }
-});
-
 // Mobile Navigation Toggle
+const menuToggle = document.getElementById('menuToggle');
+const navbar = document.getElementById('navbar');
+const navOverlay = document.getElementById('navOverlay');
+const menuIcon = menuToggle.querySelector('i');
+
 function toggleNav() {
-    const navbar = document.getElementById('navbar');
-    const menuToggle = document.querySelector('.menu-toggle');
     navbar.classList.toggle('active');
+    navOverlay.classList.toggle('active');
     
     // Change icon
-    const icon = menuToggle.querySelector('i');
     if (navbar.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
+        menuIcon.classList.remove('fa-bars');
+        menuIcon.classList.add('fa-times');
     } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
+        menuIcon.classList.remove('fa-times');
+        menuIcon.classList.add('fa-bars');
     }
 }
+
+menuToggle.addEventListener('click', toggleNav);
+navOverlay.addEventListener('click', toggleNav);
+
+// Close mobile menu when clicking nav links
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        if (window.innerWidth <= 1024) {
+            toggleNav();
+        }
+    });
+});
 
 // Typewriter Effect
 const typewriterText = document.getElementById('typewriter');
@@ -128,28 +71,13 @@ function typeWriter() {
 // Start typewriter effect
 typeWriter();
 
-// Smooth scrolling for navigation links
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', (e) => {
-        e.preventDefault();
-        
-        // Remove active class from all links
-        document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-        
-        // Add active class to clicked link
-        link.classList.add('active');
-        
-        // Close mobile menu if open
-        if (window.innerWidth <= 1024) {
-            toggleNav();
-        }
-    });
-});
-
 // Dynamic particles generation
 function createParticles() {
     const particlesContainer = document.querySelector('.particles');
-    const particleCount = 15;
+    const particleCount = window.innerWidth <= 768 ? 8 : 15;
+    
+    // Clear existing particles
+    particlesContainer.innerHTML = '';
     
     for (let i = 0; i < particleCount; i++) {
         const particle = document.createElement('div');
@@ -164,14 +92,44 @@ function createParticles() {
 // Initialize particles
 createParticles();
 
-// Add scroll effects
-window.addEventListener('scroll', () => {
-    const scrolled = window.pageYOffset;
-    const elements = document.querySelectorAll('.floating-element');
+// Recreate particles on resize
+window.addEventListener('resize', createParticles);
+
+// Performance optimized scroll effects
+let ticking = false;
+
+function updateScrollEffects() {
+    const scrollTop = window.pageYOffset;
     
-    elements.forEach((element, index) => {
-        const speed = (index + 1) * 0.5;
-        element.style.transform = `translateY(${scrolled * speed}px) rotate(${scrolled * 0.1}deg)`;
+    // Update floating elements with better performance
+    const floatingElements = document.querySelectorAll('.floating-element');
+    floatingElements.forEach((element, index) => {
+        if (window.innerWidth > 768) { // Only animate on larger screens
+            const speed = (index + 1) * 0.2;
+            element.style.transform = `translateY(${scrollTop * speed}px) rotate(${scrollTop * 0.02}deg)`;
+        }
+    });
+    
+    ticking = false;
+}
+
+window.addEventListener('scroll', () => {
+    if (!ticking) {
+        requestAnimationFrame(updateScrollEffects);
+        ticking = true;
+    }
+});
+
+// Enhanced social media hover effects
+document.querySelectorAll('.social-media a').forEach(link => {
+    link.addEventListener('mouseenter', function() {
+        if (window.innerWidth > 768) {
+            this.style.transform = 'translateY(-8px) scale(1.15) rotate(5deg)';
+        }
+    });
+    
+    link.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1) rotate(0deg)';
     });
 });
 
@@ -195,53 +153,7 @@ document.querySelectorAll('.home-content, .home-img').forEach(el => {
     observer.observe(el);
 });
 
-// Add cursor trail effect
-let mouseX = 0;
-let mouseY = 0;
-let trails = [];
-
-document.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-
-    const trail = document.createElement('div');
-    trail.style.position = 'fixed';
-    trail.style.left = mouseX + 'px';
-    trail.style.top = mouseY + 'px';
-    trail.style.width = '6px';
-    trail.style.height = '6px';
-    trail.style.background = 'var(--primary-color)';
-    trail.style.borderRadius = '50%';
-    trail.style.pointerEvents = 'none';
-    trail.style.zIndex = '9999';
-    trail.style.opacity = '0.6';
-    trail.style.transition = 'all 0.5s ease';
-    
-    document.body.appendChild(trail);
-    trails.push(trail);
-
-    setTimeout(() => {
-        trail.style.opacity = '0';
-        trail.style.transform = 'scale(0)';
-    }, 100);
-
-    setTimeout(() => {
-        if (trail.parentNode) {
-            trail.parentNode.removeChild(trail);
-        }
-        trails = trails.filter(t => t !== trail);
-    }, 600);
-
-    // Limit number of trails
-    if (trails.length > 10) {
-        const oldTrail = trails.shift();
-        if (oldTrail.parentNode) {
-            oldTrail.parentNode.removeChild(oldTrail);
-        }
-    }
-});
-
-// Add button click effects
+// Add button click effects with ripple
 document.querySelectorAll('.btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
@@ -263,55 +175,33 @@ document.querySelectorAll('.btn').forEach(btn => {
     });
 });
 
-// Add CSS for ripple effect
-const style = document.createElement('style');
-style.textContent = `
-    .btn {
-        position: relative;
-        overflow: hidden;
+// Keyboard navigation support
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navbar.classList.contains('active')) {
+        toggleNav();
     }
-    
-    .ripple {
-        position: absolute;
-        border-radius: 50%;
-        background: rgba(255, 255, 255, 0.3);
-        transform: scale(0);
-        animation: ripple-animation 0.6s linear;
-        pointer-events: none;
-    }
-    
-    @keyframes ripple-animation {
-        to {
-            transform: scale(4);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(style);
+});
 
-// Add parallax effect to background elements
-window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset;
-    
-    // Parallax for background elements
-    document.querySelector('body::before')?.style.setProperty('transform', `translateY(${scrollTop * 0.5}px)`);
-    
-    // Update floating elements
-    document.querySelectorAll('.floating-element').forEach((el, index) => {
-        const speed = (index + 1) * 0.3;
-        el.style.transform = `translateY(${scrollTop * speed}px) rotate(${scrollTop * 0.05}deg)`;
+// Add accessibility improvements
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.setAttribute('tabindex', '0');
+    link.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            link.click();
+        }
     });
 });
 
-// Enhanced social media hover effects
-document.querySelectorAll('.social-media a').forEach(link => {
-    link.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-8px) scale(1.15) rotate(5deg)';
-    });
+// Responsive handling
+window.addEventListener('resize', () => {
+    // Close mobile menu on resize to desktop
+    if (window.innerWidth > 1024 && navbar.classList.contains('active')) {
+        toggleNav();
+    }
     
-    link.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1) rotate(0deg)';
-    });
+    // Recreate particles for better performance
+    createParticles();
 });
 
 // Add loading animation
@@ -324,59 +214,12 @@ window.addEventListener('load', () => {
     }, 100);
 });
 
-// Performance optimization: throttle scroll events
-let ticking = false;
-
-function updateScrollEffects() {
-    const scrollTop = window.pageYOffset;
-    
-    // Update parallax effects
-    document.querySelectorAll('.floating-element').forEach((el, index) => {
-        const speed = (index + 1) * 0.2;
-        el.style.transform = `translateY(${scrollTop * speed}px) rotate(${scrollTop * 0.02}deg)`;
-    });
-    
-    ticking = false;
-}
-
-window.addEventListener('scroll', () => {
-    if (!ticking) {
-        requestAnimationFrame(updateScrollEffects);
-        ticking = true;
-    }
-});
-
-// Add keyboard navigation
-document.addEventListener('keydown', (e) => {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const currentActive = document.querySelector('.nav-link.active');
-    const currentIndex = Array.from(navLinks).indexOf(currentActive);
-    
-    if (e.key === 'ArrowDown' && currentIndex < navLinks.length - 1) {
+// Prevent horizontal scroll
+document.addEventListener('touchstart', function() {}, {passive: true});
+document.addEventListener('touchmove', function(e) {
+    if (e.touches.length > 1) {
         e.preventDefault();
-        navLinks[currentIndex].classList.remove('active');
-        navLinks[currentIndex + 1].classList.add('active');
-        navLinks[currentIndex + 1].focus();
-    } else if (e.key === 'ArrowUp' && currentIndex > 0) {
-        e.preventDefault();
-        navLinks[currentIndex].classList.remove('active');
-        navLinks[currentIndex - 1].classList.add('active');
-        navLinks[currentIndex - 1].focus();
     }
-});
+}, {passive: false});
 
-// Add accessibility improvements
-document.querySelectorAll('.nav-link').forEach(link => {
-    link.setAttribute('tabindex', '0');
-    link.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            link.click();
-        }
-    });
-});
-
-// Add theme transition effect
-document.documentElement.style.setProperty('--transition', 'all 0.3s ease');
-
-console.log('✨ Enhanced Portfolio Loaded Successfully!');
+console.log('✨ Enhanced Mobile-Friendly Portfolio Loaded Successfully!');

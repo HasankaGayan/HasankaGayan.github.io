@@ -11,29 +11,20 @@
 </head>
 <body>
     <!-- Floating Particles -->
-    <div class="particles">
-        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
-        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
-        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
-        <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
-        <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
-        <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
-        <div class="particle" style="left: 70%; animation-delay: 0.5s;"></div>
-        <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
-        <div class="particle" style="left: 90%; animation-delay: 2.5s;"></div>
-    </div>
-
-    <!-- Animated Background -->
-    <div class="animated-bg">
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-        <div class="floating-shape"></div>
-    </div>
+    <div class="particles"></div>
 
     <!-- Scroll Progress Indicator -->
     <div class="scroll-indicator">
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
+
+    <!-- Mobile Menu Toggle -->
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Navigation Overlay -->
+    <div class="nav-overlay" id="navOverlay"></div>
 
     <!-- Enhanced Navigation -->
     <nav id="navbar">
@@ -42,17 +33,18 @@
             <div class="nav-subtitle">Recent Graduate</div>
         </div>
         <ul>
-            <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
-            <li><a href="About_Me.html" class="active"><i class="fas fa-user"></i> <span>About</span></a></li>
+            <li><a href="index.html" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
+            <li><a href="About_Me.html"><i class="fas fa-user"></i> <span>About</span></a></li>
             <li><a href="Experience.html"><i class="fas fa-layer-group"></i> <span>Experiences</span></a></li>
             <li><a href="Education.html"><i class="fa-solid fa-graduation-cap"></i> <span>Education</span></a></li>
             <li><a href="Project.html"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
             <li><a href="Certificates.html"><i class="fa-solid fa-award"></i> <span>Certificates & Achievements</span></a></li>
             <li><a href="Contact_Me.html"><i class="fas fa-envelope"></i> <span>Contact Me</span></a></li>
         </ul>
-            <div class="nav-footer">
-                <div class="nav-logo-footer">Designed by,</div>
+        <div class="nav-footer">
+            <div class="nav-logo-footer">Designed by,</div>
             <div class="nav-subtitle-footer">Hasanka Gayan | 2025</div>
+        </div>
     </nav>
 
     <!-- Main Content -->
@@ -70,19 +62,11 @@
                     <div class="text-animation">
                         <h3>Hello, I'm</h3>
                         <h1>Hasanka Gayan Somaweera</h1>
-                        <h3>And I'm a <span class="multiple-text" id="typewriter">Undergraduate</span></h3>
+                        <h3>And I'm a <span class="multiple-text" id="typewriter">Recent Graduate</span></h3>
                     </div>
                     <p class="home-description">
                         Final-year Electrical and Electronic Engineering undergraduate, specializing in Telecommunication and Biomedical fields. I am driven by a strong passion for Electrical Engineering, Research and Development, Robotics, Software Development, Machine Learning, and IoT. I enjoy developing innovative solutions that bridge technology with real-world challenges.
                     </p>
-                    <!-- <div class="btn-group">
-                        <a href="#" class="btn primary-btn">
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                        <a href="#" class="btn secondary-btn">
-                            <i class="fas fa-paper-plane"></i> Let's Talk
-                        </a>
-                    </div> -->
                     <div class="social-media">
                         <a href="https://www.linkedin.com/in/hasanka-gayan-somaweera/" target="_blank">
                             <i class="bx bxl-linkedin"></i>
@@ -114,3 +98,127 @@
     <script src="Index_Script.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hasanka Gayan Somaweera | Portfolio</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="Index_Style.css" />
+
+</head>
+<body> -->
+    <!-- Floating Particles -->
+    <!-- <div class="particles">
+        <div class="particle" style="left: 10%; animation-delay: 0s;"></div>
+        <div class="particle" style="left: 20%; animation-delay: 1s;"></div>
+        <div class="particle" style="left: 30%; animation-delay: 2s;"></div>
+        <div class="particle" style="left: 40%; animation-delay: 3s;"></div>
+        <div class="particle" style="left: 50%; animation-delay: 4s;"></div>
+        <div class="particle" style="left: 60%; animation-delay: 5s;"></div>
+        <div class="particle" style="left: 70%; animation-delay: 0.5s;"></div>
+        <div class="particle" style="left: 80%; animation-delay: 1.5s;"></div>
+        <div class="particle" style="left: 90%; animation-delay: 2.5s;"></div>
+    </div> -->
+
+    <!-- Animated Background -->
+    <!-- <div class="animated-bg">
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+        <div class="floating-shape"></div>
+    </div> -->
+
+    <!-- Scroll Progress Indicator -->
+    <!-- <div class="scroll-indicator">
+        <div class="scroll-progress" id="scrollProgress"></div>
+    </div> -->
+
+    <!-- Enhanced Navigation -->
+    <!-- <nav id="navbar">
+        <div class="nav-header">
+            <div class="nav-logo">Hasanka Gayan</div>
+            <div class="nav-subtitle">Recent Graduate</div>
+        </div>
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
+            <li><a href="About_Me.html" class="active"><i class="fas fa-user"></i> <span>About</span></a></li>
+            <li><a href="Experience.html"><i class="fas fa-layer-group"></i> <span>Experiences</span></a></li>
+            <li><a href="Education.html"><i class="fa-solid fa-graduation-cap"></i> <span>Education</span></a></li>
+            <li><a href="Project.html"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
+            <li><a href="Certificates.html"><i class="fa-solid fa-award"></i> <span>Certificates & Achievements</span></a></li>
+            <li><a href="Contact_Me.html"><i class="fas fa-envelope"></i> <span>Contact Me</span></a></li>
+        </ul>
+            <div class="nav-footer">
+                <div class="nav-logo-footer">Designed by,</div>
+            <div class="nav-subtitle-footer">Hasanka Gayan | 2025</div>
+    </nav> -->
+
+    <!-- Main Content -->
+    <!-- <main>
+        <section class="home"> -->
+            <!-- Floating Elements -->
+            <!-- <div class="floating-elements">
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+                <div class="floating-element"></div>
+            </div>
+
+            <div class="home-container">
+                <div class="home-content">
+                    <div class="text-animation">
+                        <h3>Hello, I'm</h3>
+                        <h1>Hasanka Gayan Somaweera</h1>
+                        <h3>And I'm a <span class="multiple-text" id="typewriter">Undergraduate</span></h3>
+                    </div>
+                    <p class="home-description">
+                        Final-year Electrical and Electronic Engineering undergraduate, specializing in Telecommunication and Biomedical fields. I am driven by a strong passion for Electrical Engineering, Research and Development, Robotics, Software Development, Machine Learning, and IoT. I enjoy developing innovative solutions that bridge technology with real-world challenges.
+                    </p> -->
+                    <!-- <div class="btn-group">
+                        <a href="#" class="btn primary-btn">
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="#" class="btn secondary-btn">
+                            <i class="fas fa-paper-plane"></i> Let's Talk
+                        </a>
+                    </div> -->
+                    <!-- <div class="social-media">
+                        <a href="https://www.linkedin.com/in/hasanka-gayan-somaweera/" target="_blank">
+                            <i class="bx bxl-linkedin"></i>
+                        </a>
+                        <a href="https://github.com/HasankaGayan" target="_blank">
+                            <i class="bx bxl-github"></i>
+                        </a>
+                        <a href="mailto:hasankagayansomaweera@gmail.com" target="_blank">
+                            <i class="bx bx-envelope"></i>
+                        </a>
+                        <a href="https://web.facebook.com/hasanka.gayan.somaweera" target="_blank">
+                            <i class="bx bxl-facebook"></i>
+                        </a>
+                        <a href="https://x.com/hasanka_gayan?t=teUzUWQSyheL8mT4j-aAuw&s=08" target="_blank">
+                            <i class="bx bxl-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="home-img">
+                    <div class="img-container">
+                        <img src="Images/My Profile.jpg" alt="Hasanka Gayan" />
+                        <div class="img-overlay"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="Index_Script.js"></script>
+</body>
+</html> -->
