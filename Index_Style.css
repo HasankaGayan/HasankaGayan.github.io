@@ -669,3 +669,20 @@ main {
         display: block;
     }
 }
+
+/* Scroll Progress Indicator */
+.scroll-indicator {
+    position: left;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    z-index: 1001;
+}
+
+.scroll-progress {
+    height: 100%;
+    background: var(--gradient-primary);
+    width: 0%;
+    transition: width 0.3s ease;
+}
