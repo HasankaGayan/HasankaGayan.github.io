@@ -179,6 +179,8 @@ nav {
 nav ul {
     list-style: none;
     padding: 2rem 0;
+    height: calc(100vh - 200px);
+    overflow-y: auto;
 }
 
 nav ul li {
