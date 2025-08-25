@@ -62,18 +62,18 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            const progressBar = entry.target.querySelector('.progress-bar');
+            const progressBar = entry.target.querySelector('.experience-bar');
             if (progressBar) {
                 // Trigger the animation by re-applying the CSS variable
-                const progress = entry.target.getAttribute('data-progress');
-                progressBar.style.setProperty('--progress', progress + '%');
+                const progress = entry.target.getAttribute('data-experience');
+                progressBar.style.setProperty('--experience', progress + '%');
             }
         }
     });
 }, observerOptions);
 
-// Observe all education cards
-document.querySelectorAll('.Education-Card').forEach(card => {
+// Observe all experience cards
+document.querySelectorAll('.Experience-Card').forEach(card => {
     observer.observe(card);
 });
 
