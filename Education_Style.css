@@ -279,7 +279,7 @@ main {
 .Education-Timeline::before {
     content: '';
     position: absolute;
-    left: 50%;
+    left: 0%;
     top: 0;
     bottom: 0;
     width: 4px;
@@ -302,7 +302,7 @@ main {
 
 .Timeline-Dot {
     position: absolute;
-    left: 50%;
+    left: 0%;
     top: 2rem;
     width: 20px;
     height: 20px;
@@ -322,18 +322,18 @@ main {
 }
 
 .Timeline-Content {
-    width: 45%;
+    width: 100%;
     padding: 0 2rem;
 }
 
-.Timeline-Item:nth-child(odd) .Timeline-Content {
-    margin-left: 55%;
+/* .Timeline-Item:nth-child(odd) .Timeline-Content {
+    margin-left: 0%;
 }
 
 .Timeline-Item:nth-child(even) .Timeline-Content {
     margin-left: 0;
     text-align: right;
-}
+} */
 
 /* Education Cards */
 .Education-Card {
@@ -345,13 +345,15 @@ main {
     transition: all 0.3s ease;
     position: relative;
     overflow: hidden;
+    width: 100%;
+    margin-right: 5%;
 }
 
 .Education-Card::before {
     content: '';
     position: absolute;
     top: -50%;
-    left: -50%;
+    left: 0%;
     width: 200%;
     height: 200%;
     background: conic-gradient(
