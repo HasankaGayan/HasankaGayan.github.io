@@ -41,7 +41,7 @@ document.querySelectorAll('nav ul li a').forEach(link => {
 
 // Typewriter Effect
 const typewriterText = document.getElementById('typewriter');
-const words = ['Engineer', 'Developer', 'Researcher', 'Innovator'];
+const words = ['Assistant Lecturer', 'Engineer', 'Developer', 'Researcher', 'Innovator'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;

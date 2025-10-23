@@ -411,13 +411,14 @@ main {
 }
 
 .CEB-Logo,
-.LECO-Logo {
+.LECO-Logo,
+.APIIT-Logo {
     flex-shrink: 0;
 }
 
 .Experience-Logo {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     object-fit: contain;
     border-radius: 100px;
     border: 2px solid var(--border-color);
@@ -434,6 +435,16 @@ main {
     padding: 0.5rem;
     background: rgba(255, 255, 255, 0.05);
 }
+
+/* .Experience-Logo_APIIT {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    border-radius: 15px;
+    border: 2px solid var(--border-color);
+    padding: 0.5rem;
+    background: rgba(255, 255, 255, 0.05);
+} */
 
 .Experience-Info {
     flex: 1;
