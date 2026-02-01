@@ -1,20 +1,8 @@
-/**
- * ============================================
- * PORTFOLIO PERSONAL DATA - Single Source
- * ============================================
- * Edit your information HERE only. Changes will
- * automatically update across ALL pages.
- *
- * Or open edit-profile.html in your browser to
- * edit via a form and generate this file.
- * ============================================
- */
-
 const PERSONAL_DATA = {
     // Basic Info
-    fullName: "Hasanka Gayan",
-    shortName: "Hasanka ",
-    title: " Lecturer",
+    fullName: "Hasanka Gayan Somaweera",
+    shortName: "Hasanka Gayan",
+    title: "Assistant Lecturer",
     tagline: "Assistant Lecturer, Innovator & Researcher",
 
     // Profile
@@ -45,7 +33,7 @@ const PERSONAL_DATA = {
     },
 
     // Typewriter effect words (home page)
-    typewriterWords: ["Assistant Lecturer", "Engineer", "Developer", "Researcher", "Innovator"],
+    typewriterWords: ["Assistant Lecturer", "Electrical Engineer", "Developer", "Researcher", "Innovator"],
 
     // Footer
     footerText: "Designed by,",
