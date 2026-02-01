@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="personal-data.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hasanka Gayan Somaweera | About</title>
+    <title>About</title>
     <!-- Box Icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="About_Style.css" />
  
 </head>
-<body>
+<body data-page-title="About">
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="floating-shape"></div>
@@ -24,26 +25,8 @@
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-header">
-            <div class="nav-logo">Hasanka Gayan</div>
-            <div class="nav-subtitle">Assistant Lecturer</div>
-        </div>
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
-                <li><a href="About_Me.html" class="active"><i class="fas fa-user"></i> <span>About</span></a></li>
-                <li><a href="Experience.html"><i class="fas fa-layer-group"></i> <span>Experiences</span></a></li>
-                <li><a href="Education.html"><i class="fa-solid fa-graduation-cap"></i> <span>Education</span></a></li>
-                <li><a href="Project.html"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
-                <li><a href="Certificates.html"><i class="fa-solid fa-award"></i> <span>Certificates & Achievements</span></a></li>
-                <li><a href="Contact_Me.html"><i class="fas fa-envelope"></i> <span>Contact Me</span></a></li>
-            </ul>
-            <div class="nav-footer">
-                <div class="nav-logo-footer">Designed by,</div>
-            <div class="nav-subtitle-footer">Hasanka Gayan | 2025</div>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from navigation.js) -->
+    <div id="nav-container"></div>
 
     <!-- Main Content -->
     <main>
@@ -51,12 +34,12 @@
             <!-- Header Section -->
             <div class="about-header fade-in">
                 <h1 class="about-title">About Me</h1>
-                <p class="about-subtitle">Assistant Lecturer, Innovator & Researcher</p>
+                <p class="about-subtitle" data-personal="tagline">Assistant Lecturer, Innovator & Researcher</p>
             </div>
 
             <!-- About Content Grid -->
             <div class="about-grid">
-                <div class="about-text">
+                <div class="about-text" data-personal="bio-paragraphs">
                     <p>
                         I am an Assistant Lecturer in the Engineering Department at the Asia Pacific Institute of Information Technology (APIIT).
                     </p>
@@ -71,10 +54,10 @@
                 <div class="about-image">
                     <div class="profile-card">
                         <div class="profile-avatar">
-                            <img src="Images/My Profile.jpg">
+                            <img src="Images/My Profile.jpg" data-personal="profile-image">
                         </div>
-                        <h3 class="profile-name">Hasanka Gayan</h3>
-                        <p class="profile-role">Assistant Lecturer</p>
+                        <h3 class="profile-name" data-personal="profile-name">Hasanka Gayan</h3>
+                        <p class="profile-role" data-personal="profile-role">Assistant Lecturer</p>
                     </div>
                 </div>
             </div>
@@ -87,7 +70,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <div class="stat-number" data-count="4">4</div>
+                        <div class="stat-number" data-personal="stat-years" data-count="4">4</div>
                         <div class="stat-info">
                             <p>Years of Study</p>
                         </div>
@@ -97,7 +80,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-project-diagram"></i>
                         </div>
-                        <div class="stat-number" data-count="9">9</div>
+                        <div class="stat-number" data-personal="stat-projects" data-count="9">9</div>
                         <div class="stat-info">
                             <p>Projects Completed</p>
                         </div>
@@ -107,7 +90,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-award"></i>
                         </div>
-                        <div class="stat-number" data-count="5">5</div>
+                        <div class="stat-number" data-personal="stat-certifications" data-count="5">5</div>
                         <div class="stat-info">
                             <p>Certifications</p>
                         </div>
@@ -117,7 +100,7 @@
                         <div class="stat-icon">
                             <i class="fas fa-code"></i>
                         </div>
-                        <div class="stat-number" data-count="10">10</div>
+                        <div class="stat-number" data-personal="stat-technologies" data-count="10">10</div>
                         <div class="stat-info">
                             <p>Technologies</p>
                         </div>
@@ -180,19 +163,19 @@
             <div class="social-section">
                 <h2 class="section-title">Connect With Me</h2>
                 <div class="social-media">
-                    <a href="https://www.linkedin.com/in/hasanka-gayan-somaweera/" target="_blank" class="social-link" title="LinkedIn">
+                    <a href="#" data-personal="social-linkedin" target="_blank" class="social-link" title="LinkedIn">
                         <i class="bx bxl-linkedin"></i>
                     </a>
-                    <a href="https://github.com/HasankaGayan" target="_blank" class="social-link" title="GitHub">
+                    <a href="#" data-personal="social-github" target="_blank" class="social-link" title="GitHub">
                         <i class="bx bxl-github"></i>
                     </a>
-                    <a href="mailto:hasankagayansomaweera@gmail.com" target="_blank" class="social-link" title="Email">
+                    <a href="#" data-personal="social-email" target="_blank" class="social-link" title="Email">
                         <i class="bx bx-envelope"></i>
                     </a>
-                    <a href="https://web.facebook.com/hasanka.gayan.somaweera" target="_blank" class="social-link" title="Facebook">
+                    <a href="#" data-personal="social-facebook" target="_blank" class="social-link" title="Facebook">
                         <i class="bx bxl-facebook"></i>
                     </a>
-                    <a href="https://x.com/hasanka_gayan?t=teUzUWQSyheL8mT4j-aAuw&s=08" target="_blank" class="social-link" title="Twitter">
+                    <a href="#" data-personal="social-twitter" target="_blank" class="social-link" title="Twitter">
                         <i class="bx bxl-twitter"></i>
                     </a>
                 </div>
@@ -200,6 +183,8 @@
         </div>
     </main>
 
+    <script src="navigation.js"></script>
+    <script src="data-inject.js"></script>
     <script src="About_Script.js"> </script>
 </body>
 </html>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="personal-data.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hasanka Gayan Somaweera | Contact</title>
+    <title>Contact</title>
     <!-- Box Icons -->
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <!-- Font Awesome -->
@@ -11,7 +12,7 @@
     <link rel="stylesheet" href="Contact_Style.css" />
 
 </head>
-<body>
+<body data-page-title="Contact">
     <!-- Animated Background -->
     <div class="animated-bg">
         <div class="particle"></div>
@@ -25,26 +26,8 @@
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
 
-    <!-- Navigation -->
-    <nav id="navbar">
-        <div class="nav-header">
-            <div class="nav-logo">Hasanka Gayan</div>
-            <div class="nav-subtitle">Assistant Lecturer</div>
-        </div>
-            <ul>
-                <li><a href="index.html"><i class="fas fa-home"></i> <span>Home</span></a></li>
-                <li><a href="About_Me.html"><i class="fas fa-user"></i> <span>About</span></a></li>
-                <li><a href="Experience.html"><i class="fas fa-layer-group"></i> <span>Experiences</span></a></li>
-                <li><a href="Education.html"><i class="fa-solid fa-graduation-cap"></i> <span>Education</span></a></li>
-                <li><a href="Project.html"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
-                <li><a href="Certificates.html"><i class="fa-solid fa-award"></i> <span>Certificates & Achievements</span></a></li>
-                <li><a href="Contact_Me.html" class="active"><i class="fas fa-envelope"></i> <span>Contact Me</span></a></li>
-            </ul>
-            <div class="nav-footer">
-                <div class="nav-logo-footer">Designed by,</div>
-            <div class="nav-subtitle-footer">Hasanka Gayan | 2025</div>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from navigation.js) -->
+    <div id="nav-container"></div>
 
     <!-- Main Content -->
     <main>
@@ -65,7 +48,7 @@
                         </div>
                         <div class="contact-details">
                             <h4>Email Address</h4>
-                            <p>hasankagayansomaweera@gmail.com</p>
+                            <p data-personal="email">hasankagayansomaweera@gmail.com</p>
                         </div>
                     </div>
 
@@ -104,17 +87,17 @@
                 <div class="contact-links">
                     <h3 class="section-subtitle">Let's Connect</h3>
                     
-                    <a href="mailto:hasankagayansomaweera@gmail.com" class="contact-btn fade-in">
+                    <a href="#" data-personal="social-email" class="contact-btn fade-in">
                         <i class="fas fa-envelope"></i>
                         <span>Send Email</span>
                     </a>
 
-                    <a href="https://www.linkedin.com/in/hasanka-gayan-somaweera-745235232/" target="_blank" class="contact-btn fade-in">
+                    <a href="#" data-personal="social-linkedin" target="_blank" class="contact-btn fade-in">
                         <i class="fab fa-linkedin"></i>
                         <span>Connect on LinkedIn</span>
                     </a>
 
-                    <a href="https://github.com/HasankaGayan" target="_blank" class="contact-btn fade-in">
+                    <a href="#" data-personal="social-github" target="_blank" class="contact-btn fade-in">
                         <i class="fab fa-github"></i>
                         <span>View GitHub Profile</span>
                     </a>
@@ -153,19 +136,19 @@
             <div class="additional-contact fade-in">
                 <h3 class="section-subtitle">Find Me On</h3>
                 <div class="social-links">
-                    <a href="https://www.linkedin.com/in/hasanka-gayan-somaweera/" target="_blank" class="social-link" title="LinkedIn">
+                    <a href="#" data-personal="social-linkedin" target="_blank" class="social-link" title="LinkedIn">
                         <i class="fab fa-linkedin"></i>
                     </a>
-                    <a href="https://github.com/HasankaGayan" target="_blank" class="social-link" title="GitHub">
+                    <a href="#" data-personal="social-github" target="_blank" class="social-link" title="GitHub">
                         <i class="fab fa-github"></i>
                     </a>
-                    <a href="https://web.facebook.com/hasanka.gayan.somaweera" target="_blank" class="social-link" title="Facebook">
+                    <a href="#" data-personal="social-facebook" target="_blank" class="social-link" title="Facebook">
                         <i class="fab fa-facebook"></i>
                     </a>
-                    <a href="https://x.com/hasanka_gayan?t=teUzUWQSyheL8mT4j-aAuw&s=08" target="_blank" class="social-link" title="Twitter">
+                    <a href="#" data-personal="social-twitter" target="_blank" class="social-link" title="Twitter">
                         <i class="fab fa-twitter"></i>
                     </a>
-                    <a href="mailto:hasankagayansomaweera@gmail.com" class="social-link" title="Email">
+                    <a href="#" data-personal="social-email" class="social-link" title="Email">
                         <i class="fas fa-envelope"></i>
                     </a>
                 </div>
@@ -173,6 +156,8 @@
         </div>
     </main>
 
+    <script src="navigation.js"></script>
+    <script src="data-inject.js"></script>
     <script src="Contact_Script.js"></script>
 </body>
 </html>

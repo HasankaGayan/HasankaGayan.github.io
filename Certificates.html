@@ -1,43 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="personal-data.js"></script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hasanka Gayan Somaweera | Certificates</title>
+  <title>Certificates</title>
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="Certificates_Style.css" />
 
 </head>
-<body>
+<body data-page-title="Certificates">
   <!-- Floating Particles -->
   <div class="particles" id="particles"></div>
 
-  <!-- Mobile Menu Toggle -->
-  <button class="menu-toggle" onclick="toggleMenu()">
-    <i class="fas fa-bars"></i>
-  </button>
-
-<!-- Navigation -->
-<nav id="navbar">
-    <div class="nav-header">
-        <div class="nav-logo">Hasanka Gayan</div>
-        <div class="nav-subtitle">Assistant Lecturer</div>
-    </div>
-    <ul>
-      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="About_Me.html"><i class="fas fa-user"></i> About</a></li>
-      <li><a href="Experience.html"><i class="fas fa-layer-group"></i> Experiences</a></li>
-      <li><a href="Education.html"><i class="fa-solid fa-graduation-cap"></i> Education</a></li>
-      <li><a href="Project.html"><i class="fas fa-project-diagram"></i> Projects</a></li>
-      <li><a href="Certificates.html" class="active"><i class="fa-solid fa-award"></i> Certificates & Achievements</a></li>
-      <li><a href="Contact_Me.html"><i class="fas fa-envelope"></i> Contact Me</a></li>
-    </ul>
-    <div class="nav-footer">
-        <div class="nav-logo-footer">Designed by,</div>
-    <div class="nav-subtitle-footer">Hasanka Gayan | 2025</div>
-  </nav>
+  <!-- Navigation (loaded from navigation.js) -->
+  <div id="nav-container"></div>
 
   <!-- Main Content -->
   <main>
@@ -212,6 +191,8 @@
     </div>
   </main>
 
+  <script src="navigation.js"></script>
+  <script src="data-inject.js"></script>
   <script src="Certificates_Script.js"></script>
 </body>
 </html>

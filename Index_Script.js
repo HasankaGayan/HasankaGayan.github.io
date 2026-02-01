@@ -7,41 +7,13 @@ window.addEventListener('scroll', () => {
     scrollProgress.style.width = scrollPercent + '%';
 });
 
-// Mobile Navigation Toggle
-const menuToggle = document.getElementById('menuToggle');
-const navbar = document.getElementById('navbar');
-const navOverlay = document.getElementById('navOverlay');
-const menuIcon = menuToggle.querySelector('i');
+// Mobile nav is handled by navigation.js
 
-function toggleNav() {
-    navbar.classList.toggle('active');
-    navOverlay.classList.toggle('active');
-    
-    // Change icon
-    if (navbar.classList.contains('active')) {
-        menuIcon.classList.remove('fa-bars');
-        menuIcon.classList.add('fa-times');
-    } else {
-        menuIcon.classList.remove('fa-times');
-        menuIcon.classList.add('fa-bars');
-    }
-}
-
-menuToggle.addEventListener('click', toggleNav);
-navOverlay.addEventListener('click', toggleNav);
-
-// Close mobile menu when clicking nav links
-document.querySelectorAll('nav ul li a').forEach(link => {
-    link.addEventListener('click', () => {
-        if (window.innerWidth <= 1024) {
-            toggleNav();
-        }
-    });
-});
-
-// Typewriter Effect
+// Typewriter Effect (uses words from personal-data.js)
 const typewriterText = document.getElementById('typewriter');
-const words = ['Assistant Lecturer', 'Engineer', 'Developer', 'Researcher', 'Innovator'];
+const words = typeof PERSONAL_DATA !== 'undefined' && PERSONAL_DATA.typewriterWords
+    ? PERSONAL_DATA.typewriterWords
+    : ['Assistant Lecturer', 'Engineer', 'Developer', 'Researcher', 'Innovator'];
 let wordIndex = 0;
 let charIndex = 0;
 let isDeleting = false;
@@ -175,12 +147,7 @@ document.querySelectorAll('.btn').forEach(btn => {
     });
 });
 
-// Keyboard navigation support
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape' && navbar.classList.contains('active')) {
-        toggleNav();
-    }
-});
+// Keyboard navigation (Escape for nav is in navigation.js)
 
 // Add accessibility improvements
 document.querySelectorAll('nav ul li a').forEach(link => {
@@ -195,12 +162,6 @@ document.querySelectorAll('nav ul li a').forEach(link => {
 
 // Responsive handling
 window.addEventListener('resize', () => {
-    // Close mobile menu on resize to desktop
-    if (window.innerWidth > 1024 && navbar.classList.contains('active')) {
-        toggleNav();
-    }
-    
-    // Recreate particles for better performance
     createParticles();
 });
 

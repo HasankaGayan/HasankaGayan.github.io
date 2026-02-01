@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Your Profile Data</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { font-family: system-ui, sans-serif; max-width: 700px; margin: 2rem auto; padding: 1rem; background: #1a1a2e; color: #eee; }
+        h1 { color: #00d9ff; margin-bottom: 0.5rem; }
+        .subtitle { color: #888; margin-bottom: 2rem; font-size: 0.95rem; }
+        .section { background: #16213e; padding: 1.5rem; border-radius: 12px; margin-bottom: 1.5rem; }
+        .section h2 { color: #00d9ff; font-size: 1.1rem; margin-bottom: 1rem; }
+        label { display: block; margin-bottom: 0.3rem; color: #aaa; font-size: 0.9rem; }
+        input, textarea { width: 100%; padding: 0.6rem; margin-bottom: 1rem; border: 1px solid #333; border-radius: 8px; background: #0f0f1a; color: #fff; }
+        textarea { min-height: 80px; resize: vertical; }
+        .row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        button { background: linear-gradient(135deg, #00d9ff, #0099cc); color: #000; border: none; padding: 0.8rem 1.5rem; border-radius: 8px; cursor: pointer; font-weight: 600; margin-right: 0.5rem; }
+        button:hover { opacity: 0.9; }
+        .btn-secondary { background: #333; color: #fff; }
+        .success { background: #0a5; color: #fff; padding: 1rem; border-radius: 8px; margin-top: 1rem; display: none; }
+        .instructions { background: #2d2d44; padding: 1rem; border-radius: 8px; margin-top: 1rem; font-size: 0.9rem; line-height: 1.5; }
+        a { color: #00d9ff; }
+    </style>
+</head>
+<body>
+    <h1>✏️ Edit Your Profile Data</h1>
+    <p class="subtitle">Update your information here. Click "Generate File" to create the updated personal-data.js, then replace the file in your project.</p>
+
+    <form id="profileForm">
+        <div class="section">
+            <h2>Basic Info</h2>
+            <label>Full Name</label>
+            <input type="text" id="fullName" required>
+            <div class="row">
+                <div>
+                    <label>Short Name (for nav)</label>
+                    <input type="text" id="shortName" required>
+                </div>
+                <div>
+                    <label>Job Title</label>
+                    <input type="text" id="title" required>
+                </div>
+            </div>
+            <label>Tagline (About page)</label>
+            <input type="text" id="tagline">
+        </div>
+
+        <div class="section">
+            <h2>Contact & Social</h2>
+            <label>Email</label>
+            <input type="email" id="email" required>
+            <label>LinkedIn URL</label>
+            <input type="url" id="linkedin" placeholder="https://linkedin.com/in/yourprofile">
+            <label>GitHub URL</label>
+            <input type="url" id="github" placeholder="https://github.com/username">
+            <label>Facebook URL</label>
+            <input type="url" id="facebook" placeholder="https://facebook.com/...">
+            <label>Twitter/X URL</label>
+            <input type="url" id="twitter" placeholder="https://x.com/...">
+        </div>
+
+        <div class="section">
+            <h2>Bio</h2>
+            <label>Short Bio (Home page hero)</label>
+            <textarea id="bioShort" rows="3"></textarea>
+            <label>About Paragraph 1</label>
+            <textarea id="bioP1" rows="2"></textarea>
+            <label>About Paragraph 2</label>
+            <textarea id="bioP2" rows="3"></textarea>
+            <label>About Paragraph 3</label>
+            <textarea id="bioP3" rows="2"></textarea>
+        </div>
+
+        <div class="section">
+            <h2>Profile & Stats</h2>
+            <label>Profile Image Path</label>
+            <input type="text" id="profileImage" placeholder="Images/My Profile.jpg">
+            <div class="row">
+                <div>
+                    <label>Years of Study</label>
+                    <input type="number" id="yearsOfStudy" min="0">
+                </div>
+                <div>
+                    <label>Projects Completed</label>
+                    <input type="number" id="projectsCompleted" min="0">
+                </div>
+                <div>
+                    <label>Certifications</label>
+                    <input type="number" id="certifications" min="0">
+                </div>
+                <div>
+                    <label>Technologies</label>
+                    <input type="number" id="technologies" min="0">
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Footer & Typewriter</h2>
+            <div class="row">
+                <div>
+                    <label>Footer Credit</label>
+                    <input type="text" id="footerCredit" placeholder="Hasanka Gayan | 2025">
+                </div>
+            </div>
+            <label>Typewriter Words (comma-separated)</label>
+            <input type="text" id="typewriterWords" placeholder="Assistant Lecturer, Engineer, Developer">
+        </div>
+
+        <button type="button" onclick="loadCurrentData()">Load Current Data</button>
+        <button type="submit">Generate & Copy to Clipboard</button>
+        <button type="button" id="downloadBtn" class="btn-secondary" style="display:none;" onclick="downloadFile()">Download personal-data.js</button>
+        <button type="button" class="btn-secondary" onclick="location.href='index.html'">Back to Portfolio</button>
+    </form>
+
+    <div id="success" class="success">✅ File content copied to clipboard! Paste it into personal-data.js and save.</div>
+    <div class="instructions" id="instructions" style="display:none;">
+        <strong>Instructions:</strong> Copy the generated content below and replace the contents of <code>personal-data.js</code> in your project folder. Save the file and refresh your portfolio pages.
+    </div>
+    <pre id="output" style="background:#0f0f1a; padding:1rem; border-radius:8px; overflow-x:auto; margin-top:1rem; display:none; white-space:pre-wrap; font-size:0.85rem;"></pre>
+
+    <script src="personal-data.js"></script>
+    <script>
+        function loadCurrentData() {
+            if (typeof PERSONAL_DATA === 'undefined') {
+                alert('personal-data.js not loaded. Make sure it exists in the same folder.');
+                return;
+            }
+            const d = PERSONAL_DATA;
+            document.getElementById('fullName').value = d.fullName || '';
+            document.getElementById('shortName').value = d.shortName || '';
+            document.getElementById('title').value = d.title || '';
+            document.getElementById('tagline').value = d.tagline || '';
+            document.getElementById('email').value = d.email || '';
+            document.getElementById('linkedin').value = d.social?.linkedin || '';
+            document.getElementById('github').value = d.social?.github || '';
+            document.getElementById('facebook').value = d.social?.facebook || '';
+            document.getElementById('twitter').value = d.social?.twitter || '';
+            document.getElementById('bioShort').value = d.bioShort || '';
+            if (d.bioParagraphs && d.bioParagraphs.length >= 3) {
+                document.getElementById('bioP1').value = d.bioParagraphs[0] || '';
+                document.getElementById('bioP2').value = d.bioParagraphs[1] || '';
+                document.getElementById('bioP3').value = d.bioParagraphs[2] || '';
+            }
+            document.getElementById('profileImage').value = d.profileImage || '';
+            document.getElementById('yearsOfStudy').value = d.stats?.yearsOfStudy ?? '';
+            document.getElementById('projectsCompleted').value = d.stats?.projectsCompleted ?? '';
+            document.getElementById('certifications').value = d.stats?.certifications ?? '';
+            document.getElementById('technologies').value = d.stats?.technologies ?? '';
+            document.getElementById('footerCredit').value = d.footerCredit || '';
+            document.getElementById('typewriterWords').value = Array.isArray(d.typewriterWords) ? d.typewriterWords.join(', ') : '';
+        }
+
+        function escapeStr(s) {
+            return JSON.stringify(s == null ? '' : String(s));
+        }
+
+        document.getElementById('profileForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const words = document.getElementById('typewriterWords').value.split(',').map(s => s.trim()).filter(Boolean);
+            const wordsStr = words.length ? words.map(w => `"${w.replace(/"/g, '\\"')}"`).join(', ') : '[]';
+
+            const content = `/**
+ * ============================================
+ * PORTFOLIO PERSONAL DATA - Single Source
+ * ============================================
+ * Edit your information HERE only. Changes will
+ * automatically update across ALL pages.
+ * ============================================
+ */
+
+const PERSONAL_DATA = {
+    fullName: ${escapeStr(document.getElementById('fullName').value)},
+    shortName: ${escapeStr(document.getElementById('shortName').value)},
+    title: ${escapeStr(document.getElementById('title').value)},
+    tagline: ${escapeStr(document.getElementById('tagline').value)},
+
+    profileImage: ${escapeStr(document.getElementById('profileImage').value)},
+    profileImageAlt: ${escapeStr(document.getElementById('shortName').value)},
+
+    bioShort: ${escapeStr(document.getElementById('bioShort').value)},
+
+    bioParagraphs: [
+        ${escapeStr(document.getElementById('bioP1').value)},
+        ${escapeStr(document.getElementById('bioP2').value)},
+        ${escapeStr(document.getElementById('bioP3').value)}
+    ],
+
+    email: ${escapeStr(document.getElementById('email').value)},
+    phone: "",
+
+    social: {
+        linkedin: ${escapeStr(document.getElementById('linkedin').value)},
+        github: ${escapeStr(document.getElementById('github').value)},
+        facebook: ${escapeStr(document.getElementById('facebook').value)},
+        twitter: ${escapeStr(document.getElementById('twitter').value)},
+        email: ${escapeStr('mailto:' + document.getElementById('email').value)}
+    },
+
+    typewriterWords: [${wordsStr}],
+
+    footerText: "Designed by,",
+    footerCredit: ${escapeStr(document.getElementById('footerCredit').value)},
+
+    stats: {
+        yearsOfStudy: ${parseInt(document.getElementById('yearsOfStudy').value) || 0},
+        projectsCompleted: ${parseInt(document.getElementById('projectsCompleted').value) || 0},
+        certifications: ${parseInt(document.getElementById('certifications').value) || 0},
+        technologies: ${parseInt(document.getElementById('technologies').value) || 0}
+    }
+};
+`;
+
+            document.getElementById('output').textContent = content;
+            document.getElementById('output').style.display = 'block';
+            document.getElementById('instructions').style.display = 'block';
+
+            document.getElementById('output').dataset.generatedContent = content;
+            document.getElementById('downloadBtn').style.display = 'inline-block';
+            navigator.clipboard.writeText(content).then(() => {
+                document.getElementById('success').style.display = 'block';
+                document.getElementById('success').textContent = '✅ Copied! Paste into personal-data.js, or click Download.';
+                setTimeout(() => document.getElementById('success').style.display = 'none', 4000);
+            });
+        });
+
+        function downloadFile() {
+            const content = document.getElementById('output').dataset.generatedContent;
+            if (!content) return;
+            const blob = new Blob([content], { type: 'application/javascript' });
+            const a = document.createElement('a');
+            a.href = URL.createObjectURL(blob);
+            a.download = 'personal-data.js';
+            a.click();
+            URL.revokeObjectURL(a.href);
+        }
+
+        loadCurrentData();
+    </script>
+</body>
+</html>

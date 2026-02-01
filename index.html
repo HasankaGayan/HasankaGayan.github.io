@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="personal-data.js"></script>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hasanka Gayan Somaweera | Portfolio</title>
+    <title>Portfolio</title>
     <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="Index_Style.css" />
 
 </head>
-<body>
+<body data-page-title="Portfolio">
     <!-- Floating Particles -->
     <div class="particles"></div>
 
@@ -18,34 +19,8 @@
         <div class="scroll-progress" id="scrollProgress"></div>
     </div>
 
-    <!-- Mobile Menu Toggle -->
-    <button class="menu-toggle" id="menuToggle">
-        <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Navigation Overlay -->
-    <div class="nav-overlay" id="navOverlay"></div>
-
-    <!-- Enhanced Navigation -->
-    <nav id="navbar">
-        <div class="nav-header">
-            <div class="nav-logo">Hasanka Gayan</div>
-            <div class="nav-subtitle">Assistant Lecturer</div>
-        </div>
-        <ul>
-            <li><a href="index.html" class="active"><i class="fas fa-home"></i> <span>Home</span></a></li>
-            <li><a href="About_Me.html"><i class="fas fa-user"></i> <span>About</span></a></li>
-            <li><a href="Experience.html"><i class="fas fa-layer-group"></i> <span>Experiences</span></a></li>
-            <li><a href="Education.html"><i class="fa-solid fa-graduation-cap"></i> <span>Education</span></a></li>
-            <li><a href="Project.html"><i class="fas fa-project-diagram"></i> <span>Projects</span></a></li>
-            <li><a href="Certificates.html"><i class="fa-solid fa-award"></i> <span>Certificates & Achievements</span></a></li>
-            <li><a href="Contact_Me.html"><i class="fas fa-envelope"></i> <span>Contact Me</span></a></li>
-        </ul>
-        <div class="nav-footer">
-            <div class="nav-logo-footer">Designed by,</div>
-            <div class="nav-subtitle-footer">Hasanka Gayan | 2025</div>
-        </div>
-    </nav>
+    <!-- Navigation (loaded from navigation.js) -->
+    <div id="nav-container"></div>
 
     <!-- Main Content -->
     <main>
@@ -61,10 +36,10 @@
                 <div class="home-content">
                     <div class="text-animation">
                         <h3>Hello, I'm</h3>
-                        <h1>Hasanka Gayan Somaweera</h1>
-                        <h3>And I'm an <span class="multiple-text" id="typewriter">Assistant Lecturer</span></h3>
+                        <h1 data-personal="full-name">Hasanka Gayan Somaweera</h1>
+                        <h3>And I'm an <span class="multiple-text" id="typewriter" data-personal="title">Assistant Lecturer</span></h3>
                     </div>
-                    <p class="home-description">
+                    <p class="home-description" data-personal="bio-short">
                         Assistant Lecturer in the Engineering Department at the Asia Pacific Institute of Information Technology (APIIT).
                         I Graduated in  Electrical and Electronic Engineering, specializing in Telecommunication and Biomedical fields at university of Sri Jayewardenepura.
                     </p>
@@ -77,26 +52,26 @@
                         </a>
                     </div>
                     <div class="social-media">
-                        <a href="https://www.linkedin.com/in/hasanka-gayan-somaweera/" target="_blank">
+                        <a href="#" data-personal="social-linkedin" target="_blank">
                             <i class="bx bxl-linkedin"></i>
                         </a>
-                        <a href="https://github.com/HasankaGayan" target="_blank">
+                        <a href="#" data-personal="social-github" target="_blank">
                             <i class="bx bxl-github"></i>
                         </a>
-                        <a href="mailto:hasankagayansomaweera@gmail.com" target="_blank">
+                        <a href="#" data-personal="social-email" target="_blank">
                             <i class="bx bx-envelope"></i>
                         </a>
-                        <a href="https://web.facebook.com/hasanka.gayan.somaweera" target="_blank">
+                        <a href="#" data-personal="social-facebook" target="_blank">
                             <i class="bx bxl-facebook"></i>
                         </a>
-                        <a href="https://x.com/hasanka_gayan?t=teUzUWQSyheL8mT4j-aAuw&s=08" target="_blank">
+                        <a href="#" data-personal="social-twitter" target="_blank">
                             <i class="bx bxl-twitter"></i>
                         </a>
                     </div>
                 </div>
                 <div class="home-img">
                     <div class="img-container">
-                        <img src="Images/My Profile.jpg" alt="Hasanka Gayan" />
+                        <img src="Images/My Profile.jpg" alt="Hasanka Gayan" data-personal="profile-image" />
                         <div class="img-overlay"></div>
                     </div>
                 </div>
@@ -104,6 +79,8 @@
         </section>
     </main>
 
+    <script src="navigation.js"></script>
+    <script src="data-inject.js"></script>
     <script src="Index_Script.js"></script>
 </body>
 </html>

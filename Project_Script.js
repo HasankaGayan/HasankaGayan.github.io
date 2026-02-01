@@ -28,58 +28,9 @@ window.addEventListener('load', () => {
     setTimeout(animateCounters, 1000);
 });
 
-// Add mobile menu toggle functionality
-const menuToggle = document.createElement('button');
-menuToggle.className = 'menu-toggle';
-menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-menuToggle.style.cssText = `
-    display: none;
-    position: fixed;
-    top: 1rem;
-    left: 1rem;
-    z-index: 1001;
-    background: var(--gradient-primary);
-    border: none;
-    border-radius: 10px;
-    padding: 0.8rem;
-    color: var(--bg-color);
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-`;
+// Mobile menu is handled by navigation.js
 
-document.body.appendChild(menuToggle);
-
-// Show menu toggle on mobile
-if (window.innerWidth <= 1024) {
-    menuToggle.style.display = 'block';
-}
-
-menuToggle.addEventListener('click', () => {
-    const nav = document.querySelector('nav');
-    nav.classList.toggle('active');
-    
-    const icon = menuToggle.querySelector('i');
-    if (nav.classList.contains('active')) {
-        icon.classList.remove('fa-bars');
-        icon.classList.add('fa-times');
-    } else {
-        icon.classList.remove('fa-times');
-        icon.classList.add('fa-bars');
-    }
-});
-
-// Responsive handling
-window.addEventListener('resize', () => {
-    if (window.innerWidth <= 1024) {
-        menuToggle.style.display = 'block';
-    } else {
-        menuToggle.style.display = 'none';
-        document.querySelector('nav').classList.remove('active');
-    }
-});
-
-// Mobile menu toggle
+// Open project details modal (toggleMenu was removed - use navigation.js)
 // function toggleMenu() {
 //     const nav = document.getElementById('nav');
 //     const menuToggle = document.querySelector('.menu-toggle');
