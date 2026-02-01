@@ -1,12 +1,3 @@
-/**
- * ============================================
- * SHARED NAVIGATION - Single Source
- * ============================================
- * Edit navigation links HERE. This nav is
- * injected into all pages automatically.
- * ============================================
- */
-
 const NAV_CONFIG = {
     links: [
         { href: 'index.html', icon: 'fas fa-home', label: 'Home' },
