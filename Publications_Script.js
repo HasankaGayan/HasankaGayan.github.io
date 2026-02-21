@@ -1,0 +1,109 @@
+// Create floating particles
+function createParticles() {
+    const particlesContainer = document.getElementById('particles');
+    const particleCount = 15;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 6 + 's';
+        particle.style.animationDuration = (3 + Math.random() * 3) + 's';
+        particlesContainer.appendChild(particle);
+    }
+}
+
+// Initialize particles
+createParticles();
+
+// Mobile menu toggle
+// function toggleMenu() {
+//     const nav = document.getElementById('nav');
+//     const menuToggle = document.querySelector('.menu-toggle');
+    
+//     nav.classList.toggle('active');
+    
+//     const icon = menuToggle.querySelector('i');
+//     if (nav.classList.contains('active')) {
+//         icon.classList.remove('fa-bars');
+//         icon.classList.add('fa-times');
+//     } else {
+//         icon.classList.remove('fa-times');
+//         icon.classList.add('fa-bars');
+//     }
+// }
+
+// Highlight card function
+function highlightCard(dot) {
+    // Remove highlight from all cards
+    document.querySelectorAll('.Publication-Card').forEach(card => {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+    });
+    
+    // Highlight the clicked card
+    const card = dot.nextElementSibling.querySelector('.Publication-Card');
+    card.style.transform = 'translateY(-15px) scale(1.02)';
+    card.style.boxShadow = '0 25px 50px rgba(34, 210, 230, 0.3)';
+    
+    // Reset after 3 seconds
+    setTimeout(() => {
+        card.style.transform = '';
+        card.style.boxShadow = '';
+    }, 3000);
+}
+
+// Animate progress bars on scroll
+const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -50px 0px'
+};
+
+
+// Observe all experience cards
+document.querySelectorAll('.Experience-Card').forEach(card => {
+    observer.observe(card);
+});
+
+// Add scroll effects
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const timeline = document.querySelector('.Education-Timeline');
+    
+    if (timeline) {
+        const timelineOffset = scrolled * 0.1;
+        timeline.style.transform = `translateY(${timelineOffset}px)`;
+    }
+});
+
+// Scroll progress indicator
+window.addEventListener('scroll', () => {
+    const scrollProgress = document.getElementById('scrollProgress');
+    const scrollTop = window.pageYOffset;
+    const docHeight = document.body.offsetHeight - window.innerHeight;
+    const scrollPercent = (scrollTop / docHeight) * 100;
+    scrollProgress.style.width = scrollPercent + '%';
+});
+
+// Counter animation for stats
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute('data-count'));
+        const current = parseInt(counter.textContent);
+        const increment = target / 50;
+        
+        if (current < target) {
+            counter.textContent = Math.ceil(current + increment);
+            setTimeout(() => animateCounters(), 50);
+        }
+    });
+}
+
+// Start counter animation when page loads
+window.addEventListener('load', () => {
+    setTimeout(animateCounters, 1000);
+});
+
+// Mobile menu is handled by navigation.js

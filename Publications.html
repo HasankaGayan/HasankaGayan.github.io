@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="personal-data.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Experiences</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <link rel="stylesheet" href="Publications_Style.css" />
+
+</head>
+<body data-page-title="Publication">
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Animated background particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Navigation (loaded from navigation.js) -->
+  <div id="nav-container"></div>
+
+  <main>
+    <div class="Publication_Head">
+      <h1>Publications</h1>
+    </div>
+
+    <div class="Publication-Timeline">
+
+      <div class="Timeline-Item">
+        <div class="Timeline-Dot" onclick="highlightCard(this)"></div>
+        <div class="Publication-Card" data-experience="90">
+          <div class="status-badge">1 <sup style="font-size: 0.6em;">st</sup></div>
+          <div class="Publication-Header">
+            <div class="Publication-Logo">
+              <img src="Images/Publications/Tencon2025.png" alt="TENCON Logo" class="Publication-Logo"/>
+            </div>
+            <div class="Publication-Info">
+              <h3>Enhancing Thermal Imaging Accuracy for Power System Maintenance</h3>
+              <table class="paper-details">
+                <tr>
+                  <td class="label">First Author</td>
+                  <td class="colon">:</td>
+                  <td class="value" style="color: lightblue;"><strong>Hasanka Gayan Somaweera</strong></td>
+                </tr>
+                <tr>
+                  <td class="label">Co-Authors</td>
+                  <td class="colon">:</td>
+                  <td class="value">Gethwan Suriyawansa, Rusira Thilakarathna, Charithri Yapa, Nimantha Madhushan, Hasith Liyanage</td>
+                </tr>
+                <tr>
+                  <td class="label">DOI</td>
+                  <td class="colon">:</td>
+                  <td class="value">10.1109/TENCON66050.2025.11375326</td>
+                </tr>
+                <tr>
+                  <td class="label">Publisher</td>
+                  <td class="colon">:</td>
+                  <td class="value">IEEE</td>
+                </tr>
+                <tr>
+                  <td class="label">Published in</td>
+                  <td class="colon">:</td>
+                  <td class="value">TENCON 2025 - 2025 IEEE Region 10 Conference (TENCON)</td>
+                </tr>
+                <tr>
+                  <td class="label">Date of Conference</td>
+                  <td class="colon">:</td>
+                  <td class="value">27–30 October 2025</td>
+                </tr>
+                <tr>
+                  <td class="label">Conference Location</td>
+                  <td class="colon">:</td>
+                  <td class="value">Kota Kinabalu, Malaysia</td>
+                </tr>
+                <tr>
+                  <td class="label">Paper Link</td>
+                  <td class="colon">:</td>
+                  <td class="value">
+                    <a href="https://ieeexplore.ieee.org/document/11375326" target="_blank">
+                      View Paper
+                    </a>
+                  </td>
+                </tr>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="navigation.js"></script>
+  <script src="data-inject.js"></script>
+  <script src="Publications_Script.js"></script>
+</body>
+</html>

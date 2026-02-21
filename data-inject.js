@@ -1,12 +1,3 @@
-/**
- * ============================================
- * DATA INJECT - Auto-populates personal data
- * ============================================
- * Runs on page load. Populates elements with
- * data-personal="key" attributes from PERSONAL_DATA.
- * ============================================
- */
-
 (function() {
     if (typeof PERSONAL_DATA === 'undefined') return;
 

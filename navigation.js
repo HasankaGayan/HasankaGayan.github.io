@@ -4,6 +4,7 @@ const NAV_CONFIG = {
         { href: 'About_Me.html', icon: 'fas fa-user', label: 'About' },
         { href: 'Experience.html', icon: 'fas fa-layer-group', label: 'Experiences' },
         { href: 'Education.html', icon: 'fa-solid fa-graduation-cap', label: 'Education' },
+        { href: 'Publications.html', icon: 'fa-solid fa-newspaper', label: 'Publications' },
         { href: 'Project.html', icon: 'fas fa-project-diagram', label: 'Projects' },
         { href: 'Certificates.html', icon: 'fa-solid fa-award', label: 'Certificates & Achievements' },
         { href: 'Contact_Me.html', icon: 'fas fa-envelope', label: 'Contact Me' }
